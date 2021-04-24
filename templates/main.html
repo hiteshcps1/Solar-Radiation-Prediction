@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+
+<style>
+    .navbar-text h1 {
+        color: #fff;
+        font-size: 40px;
+        align-content: center;
+    }
+    
+    body {
+        background-color: grey;
+    }
+    
+    form {
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+
+    
+    
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+        background-color: grey;
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        
+    }
+
+   
+</style>
+
+<head>
+    <title>Solar Radiation Prediction</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-text">
+            <h1>Solar Radiation Prediction</h1>
+        </span>
+    </nav>
+
+
+
+    <form action="{{ url_for('main') }}" method="POST">
+
+            <div class="row">
+
+            <div class="col-lg-5 form-group">
+
+            <legend>Input Variables</legend>
+            <br>temp:<br>
+
+            <input name="temp" type="text" class="form-control" required>
+            <br>
+
+            <br> Pressure:<br>
+            <input name="Pressure" type="text" class="form-control" required>
+            <br>
+
+
+            <br>Humidity<br>
+            <input name="Humidity" type="text" class="form-control" required>
+            <br>
+
+            <br>wind<br>
+            <input name="wind" type="text" class="form-control" required>
+            <br>
+
+            <br>speed<br>
+            <input name="speed" type="text" class="form-control" required>
+            <br>
+
+            <br>DayOfYear<br>
+            <input name="DayOfYear" type="text" class="form-control" required>
+            <br>
+
+            <br>TimeOfDay<br>
+            <input name="TimeOfDay" type="text" class="form-control" required>
+            <br> 
+            
+                </div>
+                <div class="col-lg-5">
+                    <legend>Input Variables</legend>
+            <br>temp1:<br>
+            <input name="temp1" type="text" class="form-control" required>
+            <br>
+
+            <br>DayOfYear1<br>
+            <input name="DayOfYear1" type="text" class="form-control" required>
+            <br>
+
+            <br>TimeOfDay1<br>
+            <input name="TimeOfDay1" type="text" class="form-control" required>
+            <br> 
+            </div>
+            <div class="col-lg-6" style="text-align:end;">
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary  ">
+                </div>
+            </div>
+
+
+
+
+    </form>
+
+    <br>
+    <br>
+    <div class="row">
+            <div class="result">
+                <br>
+                <h1>Solar Radiation Prediction By Multiple Linear Regression:</h1>
+                <p style="font-size:50px">{{ result }} W/m&sup2</p>
+            </div>
+
+            <div class="result">
+                <br>
+                <h1>Solar Radiation Prediction By Random Forest Regressor:</h1>
+                <p style="font-size:50px">{{ result1 }} W/m&sup2</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
